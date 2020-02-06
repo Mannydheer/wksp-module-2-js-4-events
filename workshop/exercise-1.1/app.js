@@ -10,6 +10,9 @@
 // - setTimout is your friend.
 // - You'll a flag to store whether the user has won or lost
 
+button = document.getElementById('body');
+
+
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
