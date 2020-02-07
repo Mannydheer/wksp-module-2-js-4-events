@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 30px;
+}
+
+html {
+    
+}
+
+body {
+    background-color: cornflowerblue;
+    color: cornsilk;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em;
+}
+
+.btn {
+    border-radius: 30px;
+    border:none;
+    padding:10px 30px;
+    font-size: 30px;
+    background-color: white;
+    transition: all .5s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: crimson;
+}
+
+.stopWatch {
+    text-align: center;
+}
