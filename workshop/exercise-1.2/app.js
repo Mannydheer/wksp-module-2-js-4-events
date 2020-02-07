@@ -28,28 +28,42 @@ body.style.textAlign = "center";
 body.style.color = "red";
 body.style.background = "white";
 
-//Winner has not won yet. 
-let Winner = false;
+//loser is not a loser. 
+let loser = false;
 //keep the random number in a var
-let random = Math.floor(Math.random() * 6);
+let random =  (Math.floor(Math.random() * 6));
 //time output
 spanOutput = document.getElementById('time');
 spanOutput.innerText = random;
 
-setTimeout(function() {
-    if (Winner = false) {
+
+let myFrame = setTimeout(function() {
+
         let output = document.getElementById('result');
         output.innerText = "You lost"
-    }
-    // else {
-    //     clickTime();
-    // }
+        //if you don't click within the timelimit, you become a loser since loser is true. 
+        loser = true;
 
-}, random);
+   
+    //multiply by 1000 because in ms. 
+}, random *1000);
 
-function clickTime() {
+//when clicking anywhere in my body, I call the function clickTime. 
+body.addEventListener('click', clickTime);
+
+//execute the function clicktime
+    function clickTime() {      
+//check if loser is false(not a loser), in this case, if I click, loser is STILL FALSE because it was initialized
+//this way. 
+// Also because it never entered the setTimeout function.   
+    if(loser === false)
+    {
+    console.log(myFrame);
     let screenResult = document.getElementById('result')
     screenResult.innerText = "You won";
-}
+//also it will STOP the setTimeout function so it will NEVER RUN. 
+    clearTimeout(myFrame);
+    }
+    }
 
-body.addEventListener('click', clickTime);
+
