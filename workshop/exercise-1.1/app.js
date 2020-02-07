@@ -10,9 +10,28 @@
 // - setTimout is your friend.
 // - You'll a flag to store whether the user has won or lost
 
-button = document.getElementById('body');
+const body = document.querySelector('body');
+//give the max a max height of the screen. 
+body.style.height ='100vh'
+let hasWon = false;
 
 
-// OPTIONAL
-// Feel free to add some CSS to this once you're done
-// --------------------------------------------------
+    setTimeout(function() {
+        
+        if (hasWon === false) {
+            let output = document.getElementById('result');
+        output.innerText = ("YOU LOSE")
+        
+        }
+       
+        
+    },1000)
+
+    body.addEventListener('click', clickFast);
+    function clickFast() {
+
+        let output = document.getElementById('result');
+        output.innerText = ("YOU WIN")
+        hasWon = true;
+        
+    }
