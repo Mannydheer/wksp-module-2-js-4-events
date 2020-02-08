@@ -46,9 +46,7 @@ function controlStart () {
         timer += 1;
         let timeCount = document.getElementById("displayTime");
             timeCount.innerText = timer + ' seconds elapsed'
-            // timeCount.style.fontFamily = 'Comic Sans Ms';
-            // timeCount.style.fontSize = ' 30px'
-            // timeCount.style.color = 'black';
+         
 
 //update time every second. 
 },1000)
