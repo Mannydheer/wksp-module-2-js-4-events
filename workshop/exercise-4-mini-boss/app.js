@@ -68,6 +68,7 @@ function colorChanger (event)
         tagCreate = document.createElement('span');
         document.querySelector('body').appendChild(tagCreate);
         tagCreate.innerText = ("Winner");
+        clearInterval(totalTime);
        
     }
     // let arrayStore = [];
@@ -89,7 +90,24 @@ function gamestarter() {
         buttonAdder = document.createElement('button');
         //where do I put the buttons. 
         document.querySelector('body').appendChild(buttonAdder);
-        buttonAdder.innerText = "CLICK ME";
+        buttonAdder.innerText = "⭐";
+
+        // BUTTON STYLER.
+
+        buttonAdder.style.fontSize = '40px';
+        buttonAdder.style.padding = '20px';
+
+        //random position
+        buttonAdder.style.top = `${Math.random() * 80}vh`;
+        buttonAdder.style.left = `${Math.random() * 80}vw`;
+        
+
+
+        // 
+
+
+
+
         //give all buttens an id
         buttonAdder.id = `btn-${giveId}`;    
         //  
@@ -113,7 +131,7 @@ function gamestarter() {
         paraCreate.innerText -= 1;
         if (paraCreate.innerText == 0) {
             clearInterval(totalTime);
-            paraCreate.innerText = "TIMES UP LOSER";
+            paraCreate.innerText = "TIMES UP!";
             //fix this. 
             elementTarget.removeEventListener();
             
