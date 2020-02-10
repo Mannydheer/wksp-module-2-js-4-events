@@ -39,15 +39,13 @@ function deleteFunction() {
     deleteBtn.remove();
     //call function that wiill start game
     gamestarter();
-//DELETE
-   
-
 }
 
 
-
+var counter =0;
+let randomNum = Math.floor(Math.random() *10);
 // -------------------------------------------------------------------------
-// add another event listener which will
+
 //BUTTON CLICKER. 
 
 //once the buttons are made need to listen for a click.
@@ -57,36 +55,47 @@ function deleteFunction() {
 
 
 
+
+function colorChanger (event) 
+{   
+
+    colorChanger = event.target.id;
+    changeIt = document.getElementById(colorChanger);
+    changeIt.style.backgroundColor = 'blue';
+    counter++;
+    if(counter === randomNum)
+    {
+        tagCreate = document.createElement('span');
+        document.querySelector('body').appendChild(tagCreate);
+        tagCreate.innerText = ("Winner");
+       
+    }
+    // let arrayStore = [];
+    // arrayStore.push(changeIt)
+    
+}
+
+
+
     //game will start in this function.
 // ---------------------------------------
 function gamestarter() {
     //generate for loop for all the buttons. 
     // //generates random number
-    let randomNum = Math.floor(Math.random() *20);
-    
-    for (let count = 0; count < randomNum; count++) {
+  
+
+    for (let giveId = 0; giveId < randomNum; giveId ++) 
+    {
         buttonAdder = document.createElement('button');
         //where do I put the buttons. 
         document.querySelector('body').appendChild(buttonAdder);
         buttonAdder.innerText = "CLICK ME";
         //give all buttens an id
-        buttonAdder.id = `btn-${count}`;    
+        buttonAdder.id = `btn-${giveId}`;    
         //  
-        const elementTarget = document.getElementById(`btn-${count}`) 
+        const elementTarget = document.getElementById(`btn-${giveId}`) 
         elementTarget.addEventListener('click', colorChanger);  
-
-     
-
-    
-        //increment count
-        count++;
-    }
-
-
-
-    // colorStore = buttonAdder.style.backgroundColor;
-    // console.log(colorStore);
-
+    }  
     
     //event listener for buttons.
   
@@ -99,23 +108,18 @@ function gamestarter() {
    
        //call set interval function
        //create a timer that will count down.
-    totalTime = setInterval(() => {
+    totalTime = setInterval(() => 
+    {
         paraCreate.innerText -= 1;
         if (paraCreate.innerText == 0) {
             clearInterval(totalTime);
-            paraCreate.innerText = "TIMES UP";
+            paraCreate.innerText = "TIMES UP LOSER";
             //fix this. 
-            removeEventListener();
+            elementTarget.removeEventListener();
             
         }
-     
     }, 1000);
-
-   
-    //once out.
-  
-
-
+    //call another which will check if everything has been clicked. 
 }
 
 
@@ -123,15 +127,7 @@ function gamestarter() {
 
 //function that will change the colors 
 
-
-function colorChanger (event) {
-    
-    
-    colorChanger = event.target.id;
-    changeIt = document.getElementById(colorChanger);
-    changeIt.style.backgroundColor = 'blue';
-    
-}
+//declare empty array.
 
 
 
