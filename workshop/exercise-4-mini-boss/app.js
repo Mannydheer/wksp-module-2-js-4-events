@@ -60,8 +60,9 @@ function colorChanger (event)
 {   
 
     colorChanger = event.target.id;
-    changeIt = document.getElementById(colorChanger);
-    changeIt.style.backgroundColor = 'blue';
+    document.getElementById(colorChanger).classList.toggle('white');
+    //toggler.
+    // changeIt.style.backgroundColor = 'white';
     counter++;
     if(counter === randomNum)
     {
@@ -83,22 +84,22 @@ function colorChanger (event)
 function gamestarter() {
     //generate for loop for all the buttons. 
     // //generates random number
-  
+
 
     for (let giveId = 0; giveId < randomNum; giveId ++) 
     {
         buttonAdder = document.createElement('button');
         //where do I put the buttons. 
-        document.querySelector('body').appendChild(buttonAdder);
+        document.querySelector('div').appendChild(buttonAdder);
         buttonAdder.innerText = "⭐";
 
         // BUTTON STYLER.
 
         buttonAdder.style.fontSize = '40px';
-        buttonAdder.style.padding = '20px';
+        buttonAdder.style.padding = 0;
 
         //random position
-        buttonAdder.style.top = `${Math.random() * 80}vh`;
+        buttonAdder.style.top = `${Math.random() * 40}vh`;
         buttonAdder.style.left = `${Math.random() * 80}vw`;
         
 
@@ -112,7 +113,8 @@ function gamestarter() {
         buttonAdder.id = `btn-${giveId}`;    
         //  
         const elementTarget = document.getElementById(`btn-${giveId}`) 
-        elementTarget.addEventListener('click', colorChanger);  
+        elementTarget.addEventListener('click', colorChanger); 
+ 
     }  
     
     //event listener for buttons.
@@ -133,7 +135,8 @@ function gamestarter() {
             clearInterval(totalTime);
             paraCreate.innerText = "TIMES UP!";
             //fix this. 
-            elementTarget.removeEventListener();
+           
+ 
             
         }
     }, 1000);
