@@ -29,8 +29,6 @@
 
 
 
-
-
 const deleteBtn = document.getElementById('startBtn');
 //event listener that will wait for click. '
 deleteBtn.addEventListener('click', deleteFunction);
@@ -44,6 +42,10 @@ function deleteFunction() {
 
 var counter =0;
 let randomNum = Math.floor(Math.random() *10);
+
+//create array for not counting double clicks. 
+
+
 // -------------------------------------------------------------------------
 
 //BUTTON CLICKER. 
@@ -53,28 +55,49 @@ let randomNum = Math.floor(Math.random() *10);
 //need to somehow register all clicks by having a for loop that will check whether all the buttons are green or not?
 // 
 
+let idHolder = [];
+for (let count = 0; count < randomNum; count++) {
+    idHolder.push(false);
+
+}
+
+console.log(idHolder);
 
 
 
 function colorChanger (event) 
 {   
+    let colorChanger = event.target.id;
+    let buttonId  = document.getElementById(colorChanger);
+    //i have position of the array
+    let location= colorChanger.charAt(colorChanger.length - 1);
+    //push the id of the clikced in to array. 
+    if (idHolder[location] === false) {
+        idHolder[location] = true;
+        document.getElementById(colorChanger).classList.toggle('white');
+        counter++
+        
+        if(counter === randomNum)
+        {
+            tagCreate = document.createElement('span');
+            document.querySelector('body').appendChild(tagCreate);
+            tagCreate.innerText = ("Winner");
+            clearInterval(totalTime);
+            document.removeEventListener('click',buttonId);        
 
-    colorChanger = event.target.id;
-    document.getElementById(colorChanger).classList.toggle('white');
-    //toggler.
-    // changeIt.style.backgroundColor = 'white';
-    counter++;
-    if(counter === randomNum)
-    {
-        tagCreate = document.createElement('span');
-        document.querySelector('body').appendChild(tagCreate);
-        tagCreate.innerText = ("Winner");
-        clearInterval(totalTime);
-       
+           
+        }
+        // let arrayStore = [];
+        // arrayStore.push(changeIt)
+        
+    } else {
+        document.removeEventListener('click',buttonId);        
+
     }
-    // let arrayStore = [];
-    // arrayStore.push(changeIt)
+   
     
+
+   
 }
 
 
