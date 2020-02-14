@@ -9,3 +9,15 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+
+const button = document.querySelector('body');
+button.style.height = "100vh";
+
+function clickFast() {
+    console.log("THANKS FOR CLICKING.");
+
+}
+
+
+
+button.addEventListener('click' , clickFast);

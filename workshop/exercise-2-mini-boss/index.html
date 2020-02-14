@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- audio -->
+
+    <audio id="player">
+        <source src="SoundBible.com Must Credit.mp3">
+    </audio>
+    <div class="digitalTime">
+        <p id="timeToday"></p>
+    </div>
+    <div class="stopWatch">
+        <button class="btn" id=btnStart> Start</button>
+        <button class="btn" id=btnStop> Stop</button> 
+        <p id="displayTime"></p>
+    </div>
+    <div class="countDowntime">
+        <p id="downTime">
+            Enter a time.
+        </p>
+        <!-- need to add value in order to store information. -->
+        <input id="valueEntered" type="text" value="">
+        <button class="btn" id="inputValue">Enter</button>
+        <p id="output"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

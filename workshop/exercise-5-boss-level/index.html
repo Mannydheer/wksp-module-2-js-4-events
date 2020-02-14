@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+body 
+{
+    /* background image.  */
+    background-image: url(bg.gif);
+}
+.startGame {
+    color: white;
+    background-color: darkgrey;
+    padding: 10px 40px 10px 60px;
+    width: 15%;
+    border-radius: solid gray 2px;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    
+}
+
+.startGame:hover {
+    background-color: green;
+    cursor: pointer;
+}
+.instructions {
+    color: white;
+    background-color: darkgrey;
+    padding: 0px 40px 0px 60px;
+    width: 15%;
+    border-radius: solid gray 2px;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;   
+}
+
+.instructions:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.kirbyStyle {
+    width: 80px;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+  
+}
+.sonicStyle {
+    width: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  
+}
+/* style coin that appears after timeout.  */
+#coinStyler {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 5px;
+    margin-left: 47%;
+}
+
+/* styler for signal */
+#exclamationMarks {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    
+}
+
+/* sonic point */
+#sonicPoint {
+    /* width: 40px;
+    height: 40px; */
+    position: absolute;
+    top: 5px;
+    right: 100px;
+}
+
+.Menu {
+    display: flex;
+    text-align: center;
+   
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="backgroundImg">
+    </div>
+
+<!-- BUTTONS -->
+<div class="Menu">
+    <div class=startGame id="start">
+        <h2>Start Game</h2>
+    </div> 
+    <div class=instructions id="instruc">
+        <h2>Instructions</h2>
+    </div>
+</div>
+<!-- SPANS FOR CHARACTERS.  -->
+    <span id="kirby">
+        <img class="kirbyStyle" id="kirbyMove" src="/workshop/exercise-5-boss-level/imgs/p1.gif">
+    </span>
+    <span id="sonic">
+        <img class="sonicStyle" id="sonicMove" src="/workshop/exercise-5-boss-level/imgs/p2.gif">
+    </span>
+
+    <!-- audio track- -->
+    <audio id="soundTrack">
+        <source src="bg.mp3">
+    </audio>
+    <audio id="secsoundTrack">
+        <source src="signal.mp3">
+    </audio>
+
+    <div id=sonicPoint>
+
+    </div>
+    <div id=kirbyPoint>
+
+    </div>
+
+
+    
+    <script src="app.js"></script>
+</body>
+
+</html>
