@@ -15,7 +15,7 @@ let playSignal;
 let sonicCount = 0;
 //kirby score board
 let kirbyCount = 0;
-
+//
 //once START is clicked, START THE GAME!
 
 
